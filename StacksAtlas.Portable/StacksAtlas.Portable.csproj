@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>..\installer\windows\StacksAtlas.ico</ApplicationIcon>
+    <AssemblyName>StacksAtlas-Portable</AssemblyName>
+    <RootNamespace>StacksAtlas.Portable</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="portable.payload.zip" Condition="Exists('portable.payload.zip')" />
+    <EmbeddedResource Include="..\installer\windows\StacksAtlas.ico" Link="StacksAtlas.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StacksAtlas.Core\StacksAtlas.Core.csproj" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="10.0.0" />
+  </ItemGroup>
+
+</Project>

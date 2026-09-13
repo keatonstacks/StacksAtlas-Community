@@ -1,0 +1,43 @@
+# Security-only Dependabot (post-2.0 freeze).
+# open-pull-requests-limit: 0 disables version-bump PRs; Dependabot security updates
+# still open PRs when GitHub knows a vulnerability in a locked package.
+# groups + applies-to: security-updates = one PR per ecosystem (not one per package).
+# Repo setting required: Settings > Code security > Dependabot security updates = On
+# Local gates remain: master-build npm audit + dotnet list --vulnerable.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /StacksAtlas.UI
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 0
+    groups:
+      ui-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+
+  - package-ecosystem: npm
+    directory: /StacksAtlas.Site
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 0
+    groups:
+      site-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+
+  - package-ecosystem: nuget
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 0
+    groups:
+      nuget-security:
+        applies-to: security-updates
+        patterns:
+          - "*"

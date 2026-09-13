@@ -1,0 +1,15 @@
+**/bin/
+**/obj/
+**/node_modules/
+**/dist/
+.env
+.git/
+.vs/
+.github/
+*.db
+*.db*
+*.user
+**/data/logs/
+pollingsettings.json
+DEVELOPMENT.md
+StacksAtlas.Site/

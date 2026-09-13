@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="StacksAtlas.API/StacksAtlas.API.csproj" />
+  <Project Path="StacksAtlas.Core/StacksAtlas.Core.csproj" />
+  <Project Path="StacksAtlas.Tests/StacksAtlas.Tests.csproj" />
+</Solution>

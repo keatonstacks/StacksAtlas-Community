@@ -1,0 +1,7 @@
+@StacksAtlas_API_HostAddress = http://localhost:5000
+
+### Get all devices
+GET {{StacksAtlas_API_HostAddress}}/api/devices
+
+### Get database health
+GET {{StacksAtlas_API_HostAddress}}/api/health/database

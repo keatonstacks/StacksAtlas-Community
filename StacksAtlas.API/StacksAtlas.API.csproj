@@ -1,0 +1,73 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="10.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="10.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="10.0.7" />
+    <PackageReference Include="Microsoft.OpenApi" Version="2.9.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="10.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="7.2.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
+
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.9">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StacksAtlas.Core\StacksAtlas.Core.csproj" />
+  </ItemGroup>
+  <PropertyGroup>
+    <SpaRoot>..\StacksAtlas.UI\</SpaRoot>
+  </PropertyGroup>
+
+  <!-- Windows appliance publish: no console window + branded taskbar/exe icon -->
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' == 'win-x64'">
+    <OutputType>WinExe</OutputType>
+    <ApplicationIcon>..\installer\windows\StacksAtlas.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <Target Name="BuildUI" Inputs="@(SpaInputFiles)" Outputs="$(SpaRoot)dist\index.html" Condition="'$(SkipReactBuild)' != 'true'">
+    <Message Text="Building UI files..." Importance="high" />
+    <Exec Command="npm install" WorkingDirectory="$(SpaRoot)" Condition="!Exists('$(SpaRoot)node_modules')" />
+    <Exec Command="npm run build:fast" WorkingDirectory="$(SpaRoot)" Condition="'$(FastBuild)' == 'true'" />
+    <Exec Command="npm run build" WorkingDirectory="$(SpaRoot)" Condition="'$(FastBuild)' != 'true'" />
+  </Target>
+
+  <Target Name="CopyUI" AfterTargets="Build" DependsOnTargets="BuildUI">
+    <Message Text="Copying UI files to wwwroot..." Importance="high" />
+    <RemoveDir Directories="$(OutDir)wwwroot" />
+    <MakeDir Directories="$(OutDir)wwwroot" />
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)dist\**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(DistFiles)" DestinationFiles="@(DistFiles->'$(OutDir)wwwroot\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+
+  <ItemGroup>
+    <!-- Define inputs for incremental build check: only actual source files and config files to avoid false cache invalidation -->
+    <SpaInputFiles Include="$(SpaRoot)src\**\*.*" />
+    <SpaInputFiles Include="$(SpaRoot)package.json" />
+  </ItemGroup>
+
+  <Target Name="PublishUI" AfterTargets="ComputeFilesToPublish">
+    <ItemGroup>
+      <DistFilesPublish Include="$(SpaRoot)dist\**\*" />
+      <ResolvedFileToPublish Include="@(DistFilesPublish->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>wwwroot\%(RecursiveDir)%(Filename)%(Extension)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+</Project>

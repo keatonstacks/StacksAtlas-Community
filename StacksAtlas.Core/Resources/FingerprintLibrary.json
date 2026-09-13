@@ -1,0 +1,308 @@
+{
+  "Version": "1.0.0",
+  "Rules": [
+    {
+      "Name": "OpenAVC Room Control",
+      "Pattern": "\\b(OpenAVC|openavc)\\b",
+      "Type": "Network_Infrastructure",
+      "Vendor": "OpenAVC",
+      "Model": "Room Control Host",
+      "Confidence": 90
+    },
+    {
+      "Name": "Pioneer Device",
+      "Pattern": "\\b(Pioneer|VSX|SC-|LX-)\\b",
+      "Type": "Media_Player",
+      "Vendor": "Pioneer",
+      "Confidence": 80
+    },
+    {
+      "Name": "LG webOS TV",
+      "Pattern": "\\b(webos|web\\s?os|lg\\s?tv|oled|nano\\s?cell)\\b",
+      "Type": "Video_Display",
+      "Vendor": "LG",
+      "Model": "webOS TV",
+      "Confidence": 90
+    },
+    {
+      "Name": "WyreStorm AV-over-IP",
+      "Pattern": "\\b(WyreStorm|Wyre\\s?Storm|NetworkHD|Apollo\\s?VX|Synergy\\s?3)\\b",
+      "Type": "Video_Decoder",
+      "Vendor": "WyreStorm",
+      "Model": "WyreStorm Device",
+      "Confidence": 90
+    },
+    {
+      "Name": "Pro-AV Brand Match",
+      "Pattern": "\\b(Crestron|Q-SYS|QSC|Biamp|Tesira|Devio|Forte|Denon|Marantz|Yamaha|Onkyo|Axis|Hikvision|Dahua|Ubiquiti|UniFi)\\b",
+      "Type": "Unknown",
+      "Confidence": 40
+    },
+    {
+      "Name": "Samsung Smart TV",
+      "Pattern": "\\b(Samsung\\s?TV|Smart\\s?TV|Tizen)\\b",
+      "Type": "Video_Display",
+      "Vendor": "Samsung",
+      "Model": "Smart TV",
+      "Confidence": 85
+    },
+    {
+      "Name": "Apple TV",
+      "Pattern": "\\b(Apple\\s?TV)\\b",
+      "Type": "Media_Player",
+      "Vendor": "Apple, Inc.",
+      "Model": "Apple TV",
+      "Confidence": 80
+    },
+    {
+      "Name": "iPhone",
+      "Pattern": "\\b(iPhone)\\b",
+      "Type": "Mobile",
+      "Vendor": "Apple, Inc.",
+      "Model": "iPhone",
+      "Confidence": 80
+    },
+    {
+      "Name": "iPad",
+      "Pattern": "\\b(iPad)\\b",
+      "Type": "Tablet",
+      "Vendor": "Apple, Inc.",
+      "Model": "iPad",
+      "Confidence": 80
+    },
+    {
+      "Name": "MacBook Pro",
+      "Pattern": "\\b(MacBook\\s?Pro)\\b",
+      "Type": "Computer",
+      "Vendor": "Apple, Inc.",
+      "Model": "MacBook Pro",
+      "Confidence": 80
+    },
+    {
+      "Name": "Sonos Speaker",
+      "Pattern": "\\b(Sonos)\\b",
+      "Type": "Audio_Speaker",
+      "Vendor": "Sonos",
+      "Model": "Sonos Speaker",
+      "Confidence": 80
+    },
+    {
+      "Name": "UniFi Device",
+      "Pattern": "\\b(UniFi)\\b",
+      "Type": "Network_Infrastructure",
+      "Vendor": "Ubiquiti",
+      "Model": "UniFi Device",
+      "Confidence": 80
+    },
+    {
+      "Name": "Xbox One",
+      "Pattern": "Xbox\\s?One",
+      "Type": "Gaming_Console",
+      "Vendor": "Microsoft",
+      "Model": "Xbox One",
+      "Confidence": 80
+    },
+    {
+      "Name": "PlayStation",
+      "Pattern": "PlayStation\\s?[45]|PS[45]",
+      "Type": "Gaming_Console",
+      "Vendor": "Sony",
+      "Model": "PlayStation",
+      "Confidence": 80
+    },
+    {
+      "Name": "Biamp Tesira",
+      "Pattern": "\\b(Biamp|Tesira|Devio|Forte)\\b",
+      "Type": "Audio_DSP",
+      "Vendor": "Biamp",
+      "Model": "Biamp Device",
+      "Confidence": 90
+    },
+    {
+      "Name": "Q-SYS Core",
+      "Pattern": "\\b(Q-SYS|QSYS|QSC\\s?Core|Core\\s?110f|Core\\s?Nano|8\\s?Flex)\\b",
+      "Type": "Audio_DSP",
+      "Vendor": "Q-SYS",
+      "Model": "Q-SYS Core",
+      "Confidence": 90
+    },
+    {
+      "Name": "Crestron Processor",
+      "Pattern": "\\b(CP[34]|MC[34]|RMC[34]|VC-4|Crestron\\s?Processor)\\b",
+      "Type": "Control_Processor",
+      "Vendor": "Crestron",
+      "Model": "Control Processor",
+      "Confidence": 90
+    },
+    {
+      "Name": "Cisco Switch",
+      "Pattern": "\\b(Catalyst|Nexus|C[239][0-9]{3}|Cisco\\s?Switch)\\b",
+      "Type": "Network_Switch",
+      "Vendor": "Cisco",
+      "Model": "Cisco Switch",
+      "Confidence": 90
+    },
+    {
+      "Name": "Synology NAS",
+      "Pattern": "\\b(Synology|DiskStation|RackStation)\\b",
+      "Type": "Storage_NAS",
+      "Vendor": "Synology",
+      "Model": "Synology NAS",
+      "Confidence": 90
+    },
+    {
+      "Name": "Tesla Car",
+      "Pattern": "\\b(Tesla)\\b",
+      "Type": "IoT",
+      "Vendor": "Tesla",
+      "Model": "Tesla Vehicle",
+      "Confidence": 70
+    },
+    {
+      "Name": "Amazon Echo",
+      "Pattern": "\\b(Alexa|Echo|Dot|Show)\\b",
+      "Type": "IoT",
+      "Vendor": "Amazon",
+      "Model": "Echo Device",
+      "Confidence": 80
+    },
+    {
+      "Name": "Google Nest",
+      "Pattern": "\\b(Nest|Chromecast|Google\\s?Home)\\b",
+      "Type": "IoT",
+      "Vendor": "Google",
+      "Model": "Nest/Cast Device",
+      "Confidence": 80
+    },
+    {
+      "Name": "Roku",
+      "Pattern": "\\b(Roku)\\b",
+      "Type": "Media_Player",
+      "Vendor": "Roku",
+      "Model": "Roku Player",
+      "Confidence": 80
+    },
+    {
+      "Name": "NVIDIA Shield",
+      "Pattern": "\\b(Shield)\\b",
+      "Type": "Media_Player",
+      "Vendor": "NVIDIA",
+      "Model": "SHIELD TV",
+      "Confidence": 80
+    },
+    {
+      "Name": "HP Printer",
+      "Pattern": "\\b(HP\\s?(OfficeJet|LaserJet))\\b",
+      "Type": "Printer",
+      "Vendor": "HP",
+      "Model": "HP Printer",
+      "Confidence": 80
+    },
+    {
+      "Name": "Shure Wireless",
+      "Pattern": "\\b(ULXD|QLXD|AD4|AXT|Shure)\\b",
+      "Type": "Audio_Microphone",
+      "Vendor": "Shure",
+      "Model": "Wireless Receiver",
+      "Confidence": 90
+    },
+    {
+      "Name": "Sennheiser Wireless",
+      "Pattern": "\\b(EW-D|SpeechLine|Sennheiser)\\b",
+      "Type": "Audio_Microphone",
+      "Vendor": "Sennheiser",
+      "Model": "Wireless Receiver",
+      "Confidence": 90
+    },
+    {
+      "Name": "Axis Camera",
+      "Pattern": "\\b(Axis\\s?[A-Z][0-9]{4}|Axis\\s?Companion)\\b",
+      "Type": "Video_Camera",
+      "Vendor": "Axis Communications",
+      "Model": "Network Camera",
+      "Confidence": 90
+    },
+    {
+      "Name": "Polycom Video",
+      "Pattern": "\\b(Polycom|GroupSeries|Trio|Studio\\s?X)\\b",
+      "Type": "Collaboration_Codec",
+      "Vendor": "Poly",
+      "Model": "Collaboration Device",
+      "Confidence": 90
+    }
+  ],
+  "PortRules": [
+    {
+      "Port": 44400,
+      "Type": "Audio_DanteDevice",
+      "Model": "Dante Endpoint",
+      "Confidence": 60
+    },
+    {
+      "Port": 41794,
+      "Type": "Control_Processor",
+      "Vendor": "Crestron",
+      "Confidence": 70
+    },
+    {
+      "Port": 41795,
+      "Type": "Control_Processor",
+      "Vendor": "Crestron",
+      "Confidence": 70
+    },
+    {
+      "Port": 1702,
+      "Type": "Audio_DSP",
+      "Vendor": "Q-SYS",
+      "Model": "Q-SYS Device",
+      "Confidence": 50
+    },
+    {
+      "Port": 1317,
+      "Type": "Audio_DSP",
+      "Vendor": "Biamp",
+      "Model": "Tesira Device",
+      "Confidence": 70
+    },
+    {
+      "Port": 8008,
+      "Type": "Media_Player",
+      "Model": "Cast-Enabled Device",
+      "Confidence": 50
+    },
+    {
+      "Port": 8009,
+      "Type": "Media_Player",
+      "Model": "Cast-Enabled Device",
+      "Confidence": 60
+    },
+    {
+      "Port": 5000,
+      "Type": "Storage_NAS",
+      "Confidence": 30
+    },
+    {
+      "Port": 10001,
+      "Type": "Network_Infrastructure",
+      "Confidence": 30
+    },
+    {
+      "Port": 10001,
+      "Type": "Media_Player",
+      "Confidence": 30
+    },
+    {
+      "Port": 554,
+      "Type": "Video_Camera",
+      "Model": "RTSP Camera",
+      "Confidence": 40
+    },
+    {
+      "Port": 62078,
+      "Type": "Mobile",
+      "Vendor": "Apple, Inc.",
+      "Model": "iOS Device",
+      "Confidence": 70
+    }
+  ]
+}

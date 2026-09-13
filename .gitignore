@@ -1,0 +1,72 @@
+# .NET
+bin/
+obj/
+.vs/
+.vscode/
+*.user
+*.pdb
+*.suo
+*.dll
+*.exe
+
+# Node / React
+node_modules/
+dist/
+build/*
+!build/DEPLOY_READY.txt
+.env
+.env.local
+.env.release
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# StacksAtlas Specific
+*.db
+*.db-log
+*.db-shm
+*.db-wal
+networksettings.json
+device_icons/
+logs/
+
+# Installer Build Artifacts
+installer/windows/*.msi
+installer/windows/*.wixobj
+installer/windows/*.wixpdb
+installer/windows/*.cab
+installer/windows/Harvest/
+installer/windows/app.ico
+installer/windows/Banner.bmp
+installer/windows/Dialog.bmp
+installer/windows/Components.wxs
+installer/winget/generated/
+
+# Portable build intermediates (build-portable.ps1)
+installer/portable/publish/
+installer/portable/payload-staging/
+
+*.tar
+*.zip
+publish-*/
+
+# GitHub Actions Local Runner
+actions-runner/
+
+# Antigravity Skills
+.agents/skills/*
+!.agents/skills/stacksatlas-architect/
+
+# Temp logs and backups
+*.msi.bak
+install.log
+build/install.log
+
+# Security audit compliance reports (generated each run)
+artifacts/
+
+# Local deploy secrets (never commit)
+deploy-secrets.local.ps1
+scripts/homelab.local.ps1
+.secrets/
+*.deploy-creds.xml
