@@ -43,6 +43,12 @@ dotnet run --project StacksAtlas.API
 
 Once started, navigate to `http://localhost:5000` in your web browser.
 
+## Pre-Built Binaries & Releases
+
+If you prefer ready-to-run executables without building from source:
+- **GitHub Releases**: Download pre-built portable binaries directly from [GitHub Releases](https://github.com/keatonstacks/StacksAtlas-Community/releases).
+- **Official Website**: Download mirrors and installation guides are available at [stacksatlas.com](https://stacksatlas.com).
+
 ---
 
 ## Contributing
