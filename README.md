@@ -43,6 +43,8 @@ dotnet run --project StacksAtlas.API
 
 Once started, navigate to `http://localhost:5000` in your web browser.
 
+---
+
 ## Pre-Built Binaries & Releases
 
 If you prefer ready-to-run executables without building from source:

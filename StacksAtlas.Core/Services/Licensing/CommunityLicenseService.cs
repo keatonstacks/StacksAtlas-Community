@@ -9,7 +9,11 @@ namespace StacksAtlas.Core.Services.Licensing;
 /// </summary>
 public sealed class CommunityLicenseService : ILicenseService
 {
-    public event Action<LicenseStatus>? OnLicenseStatusChanged;
+    public event Action<LicenseStatus>? OnLicenseStatusChanged
+    {
+        add { }
+        remove { }
+    }
 
     private static readonly LicenseStatus CommunityStatus = new(
         IsActive: true,

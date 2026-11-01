@@ -358,9 +358,24 @@ public static class ServiceCollectionExtensions
         else
             services.AddSingleton<IHardwareIdProvider, LinuxHardwareIdProvider>();
 
-        services.AddSingleton<ILicenseService, CommunityLicenseService>();
+        services.AddSingleton(typeof(ILicenseService), ResolveLicenseServiceType());
         return services;
     }
+
+    /// <summary>
+    /// Fully-qualified name of the commercial license provider. Absent in the MIT community export.
+    /// </summary>
+    public const string CommercialLicenseServiceTypeName = "StacksAtlas.Core.Services.Licensing.LicenseService";
+
+    /// <summary>
+    /// Resolves <see cref="ILicenseService"/> implementation: commercial <c>LicenseService</c> when compiled in,
+    /// otherwise <see cref="CommunityLicenseService"/> (MIT community builds). Guarded by
+    /// <c>LicenseEntitlementTests.Commercial_Build_Resolves_LicenseService</c> so a rename cannot silently
+    /// downgrade the commercial appliance to the unrestricted community provider.
+    /// </summary>
+    public static Type ResolveLicenseServiceType() =>
+        typeof(CommunityLicenseService).Assembly.GetType(CommercialLicenseServiceTypeName)
+            ?? typeof(CommunityLicenseService);
 
     public static IServiceCollection AddStacksAtlasWorkers(this IServiceCollection services)
     {

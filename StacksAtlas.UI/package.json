@@ -1,7 +1,7 @@
 {
   "name": "stacksatlas.ui",
   "private": true,
-  "version": "2.0.1",
+  "version": "2.0.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -43,8 +43,10 @@
     "@emotion/styled": "^11.14.1",
     "@mui/icons-material": "^5.18.0",
     "@mui/material": "^5.18.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-force-graph-2d": "^1.29.1",
-    "react-router-dom": "^6.30.4",
+    "react-router-dom": "^7.18.5",
     "recharts": "^3.6.0"
   }
 }
