@@ -78,7 +78,7 @@ public sealed class HubDepotUpdateCheckServiceTests
             "https://hub.local:5002/api/federation/updates/artifacts/win-x64-msi/1.9.2?channel=stable",
             result.DownloadUrl);
         Assert.Equal("abc", result.Sha256);
-        Assert.True(result.ApplySupported);
+        Assert.Equal(OperatingSystem.IsWindows(), result.ApplySupported);
     }
 
     [Fact]
