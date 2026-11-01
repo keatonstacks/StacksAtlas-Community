@@ -28,7 +28,7 @@ yarn-error.log*
 *.db-wal
 networksettings.json
 device_icons/
-logs/
+/logs/
 
 # Installer Build Artifacts
 installer/windows/*.msi
